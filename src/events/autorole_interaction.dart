@@ -5,7 +5,6 @@ import 'package:mineral/framework.dart';
 class AutoroleInteraction extends MineralEvent<ButtonCreateEvent> with MineralContext {
 
   Future<void> handle(ButtonCreateEvent event) async {
-    //Role
     final String? roleRocket = environment.get('ROCKET');
     final String? roleCod = environment.get('COD');
     final String? roleMultiGaming = environment.get('MG');
@@ -15,13 +14,13 @@ class AutoroleInteraction extends MineralEvent<ButtonCreateEvent> with MineralCo
       if (rocket == true) {
         event.interaction.member?.roles.remove(roleRocket.toString());
         event.interaction.reply(
-            content: 'Le rôle rocket league vous à êtait retiré !',
+            content: 'Le rôle rocket league vous a été retiré !',
             private: true);
         return;
       }
       await event.interaction.member?.roles.add(roleRocket.toString());
       await event.interaction.reply(
-          content: 'Le rôle rocket league vous à êtait atribué !',
+          content: 'Le rôle rocket league vous a été attribué',
           private: true);
     }
 
@@ -30,13 +29,13 @@ class AutoroleInteraction extends MineralEvent<ButtonCreateEvent> with MineralCo
       if (cod == true) {
         event.interaction.member?.roles.remove(roleCod.toString());
         event.interaction.reply(
-            content: 'Le rôle call of duty vous à êtait retiré !',
+            content: 'Le rôle call of duty vous a été retiré !',
             private: true);
         return;
       }
       await event.interaction.member?.roles.add(roleCod.toString());
       await event.interaction.reply(
-          content: 'Le rôle call of duty vous à êtait atribué !',
+          content: 'Le rôle call of duty vous a été attribué !',
           private: true);
     }
 
@@ -45,13 +44,13 @@ class AutoroleInteraction extends MineralEvent<ButtonCreateEvent> with MineralCo
       if (multi == true) {
         event.interaction.member?.roles.remove(roleMultiGaming.toString());
         event.interaction.reply(
-            content: 'Le rôle multigaming vous à êtait retiré !',
+            content: 'Le rôle multigaming vous a été retiré !',
             private: true);
         return;
       }
       await event.interaction.member?.roles.add(roleMultiGaming.toString());
       await event.interaction.reply(
-          content: 'Le rôle multigaming vous à êtait atribué !',
+          content: 'Le rôle multigaming vous a été attribué !',
           private: true);
     }
   }

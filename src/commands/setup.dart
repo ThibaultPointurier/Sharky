@@ -28,7 +28,7 @@ class Setup extends MineralCommand with MineralContext {
 
     final embed = new EmbedBuilder()
       ..title = 'Hello !'
-      ..description = 'Nous avons mis en place un nouveau système de rôle !\n\nPour avoir accès à un rôle, il vous suffit de cliquer sur la réaction correspondante à ce rôle.\n\nVous pouvez également vous désabonner en cliquant sur la réaction en dessous du rôle que vous avez choisi.\n\nVous pouvez également choisir plusieurs rôles !  \n\nSi vous avez des questions, n\'hésitez pas à contacter un membre du staff !\n'
+      ..description = 'Nous avons mis en place un nouveau système de rôle !\n\nPour avoir accès à un rôle, il vous suffit de cliquer sur la réaction correspondant à ce rôle.\n\nVous pouvez également vous désabonner en cliquant sur la réaction en dessous du rôle que vous avez choisi.\n\nVous pouvez également choisir plusieurs rôles !  \n\nSi vous avez des questions, n\'hésitez pas à contacter un membre du staff !\n'
       ..color = Color.cyan_500
       ..timestamp = DateTime.now()
       ..footer = new Footer(text: 'Sharky',
