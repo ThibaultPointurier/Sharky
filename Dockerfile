@@ -1,6 +1,7 @@
 FROM dart:stable
 
 WORKDIR /app
+COPY .env.example .env
 COPY ./pubspec.* ./
 RUN dart pub get
 
