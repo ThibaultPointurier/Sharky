@@ -58,4 +58,4 @@ jobs:
           script: |
             cd /srv/sharky
             sudo docker compose pull sharky
-            sudo docker compose up --no-deps -d sharky
+            sudo docker compose up sharky
