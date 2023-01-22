@@ -8,7 +8,10 @@ environment:
   sdk: '>=2.17.0 <3.0.0'
 
 dependencies:
- mineral: ^2.6.1
+  mineral:
+    git:
+      url: https://github.com/mineral-dart/core.git
+      ref: develop
 
 dev_dependencies:
   lints: ^1.0.0
