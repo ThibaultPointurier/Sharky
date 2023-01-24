@@ -59,8 +59,7 @@ class Setup extends MineralCommand with MineralContext {
 
   Future<void> executePlatforme(CommandInteraction interaction) async {
     final channel = await interaction.guild?.channels.cache.get(environment.get('CHANNEL_PLATEFORME')) as TextChannel;
-
-    final pc_emoji = await interaction.guild?.emojis.cache.get(environment.get('EMOJI_PC')) as Emoji;
+    
     final ps4_emoji = await interaction.guild?.emojis.cache.get(environment.get('EMOJI_PS4')) as Emoji;
     final xbox_emoji = await interaction.guild?.emojis.cache.get(environment.get('EMOJI_XBOX')) as Emoji;
     final switch_emoji = await interaction.guild?.emojis.cache.get(environment.get('EMOJI_SWITCH')) as Emoji;
@@ -70,11 +69,11 @@ class Setup extends MineralCommand with MineralContext {
           customId: 'pc',
           style: ButtonStyle.primary,
           label: 'PC',
-          emoji: EmojiBuilder.fromEmoji(pc_emoji)),
+          emoji: EmojiBuilder.fromUnicode('💻')),
       ButtonBuilder.fromButton(
           customId: 'ps4',
           style: ButtonStyle.primary,
-          label: 'PS4',
+          label: 'Playstation',
           emoji: EmojiBuilder.fromEmoji(ps4_emoji)),
       ButtonBuilder.fromButton(
           customId: 'xbox',
