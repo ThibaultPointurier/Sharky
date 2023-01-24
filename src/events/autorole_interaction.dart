@@ -5,50 +5,46 @@ import 'package:mineral/framework.dart';
 class AutoroleInteraction extends MineralEvent<ButtonCreateEvent> with MineralContext {
 
   Future<void> handle(ButtonCreateEvent event) async {
-    final String? roleRocket = environment.get('ROCKET');
-    final String? roleCod = environment.get('COD');
-    final String? roleMultiGaming = environment.get('MG');
-
     if (event.interaction.customId == 'rocket') {
-      final rocket = event.interaction.member?.roles.cache.containsKey(roleRocket.toString());
+      final rocket = event.interaction.member?.roles.cache.containsKey(environment.get('ROLE_ROCKET'));
       if (rocket == true) {
-        event.interaction.member?.roles.remove(roleRocket.toString());
+        event.interaction.member?.roles.remove(environment.get('ROLE_ROCKET'));
         event.interaction.reply(
             content: 'Le rôle rocket league vous a été retiré !',
             private: true);
         return;
       }
-      await event.interaction.member?.roles.add(roleRocket.toString());
+      await event.interaction.member?.roles.add(environment.get('ROLE_ROCKET'));
       await event.interaction.reply(
           content: 'Le rôle rocket league vous a été attribué',
           private: true);
     }
 
     else if (event.interaction.customId == 'callofduty') {
-      final cod = event.interaction.member?.roles.cache.containsKey(roleCod.toString());
+      final cod = event.interaction.member?.roles.cache.containsKey(environment.get('ROLE_COD'));
       if (cod == true) {
-        event.interaction.member?.roles.remove(roleCod.toString());
+        event.interaction.member?.roles.remove(environment.get('ROLE_COD'));
         event.interaction.reply(
             content: 'Le rôle call of duty vous a été retiré !',
             private: true);
         return;
       }
-      await event.interaction.member?.roles.add(roleCod.toString());
+      await event.interaction.member?.roles.add(environment.get('ROLE_COD'));
       await event.interaction.reply(
           content: 'Le rôle call of duty vous a été attribué !',
           private: true);
     }
 
     else if (event.interaction.customId == 'multigame') {
-      final multi = event.interaction.member?.roles.cache.containsKey(roleMultiGaming.toString());
+      final multi = event.interaction.member?.roles.cache.containsKey(environment.get('ROLE_MG'));
       if (multi == true) {
-        event.interaction.member?.roles.remove(roleMultiGaming.toString());
+        event.interaction.member?.roles.remove(environment.get('ROLE_MG'));
         event.interaction.reply(
             content: 'Le rôle multigaming vous a été retiré !',
             private: true);
         return;
       }
-      await event.interaction.member?.roles.add(roleMultiGaming.toString());
+      await event.interaction.member?.roles.add(environment.get('ROLE_MG'));
       await event.interaction.reply(
           content: 'Le rôle multigaming vous a été attribué !',
           private: true);
